@@ -2,4 +2,25 @@ server:
   port: 8080
 spring:
   thymeleaf:
-    cache: false
+    cache : false
+    check-template : true
+    check-template-location : true
+  #开启MVC thymeleaf 视图解析
+    enabled : true
+    encoding : utf-8
+    mode : HTML
+    prefix : classpath:/templates/
+    suffix : .html
+  datasource:
+    username : root
+    password : 123456
+    url : jdbc:mysql://127.0.0.1:3306/mybatis?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    driver-class-name : com.mysql.cj.jdbc.Driver
+  servlet:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 500MB
+
+mybatis:
+  type-aliases-package : com.upc.demo.bean
+  mapper-locations : classpath:mybatis/mapper/*.xml

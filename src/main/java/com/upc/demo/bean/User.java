@@ -1,17 +1,44 @@
 package com.upc.demo.bean;
 
+import javax.annotation.Generated;
+
 public class User {
 
-private String username;
-private  String password;
+private int position;
+    private  int id;
+    private  String username;
+    private String password;
 
+    public User() {
+    }
+
+    public User(int id, String username, String password,int position) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.position=position;
+    }
 
     public User(String username, String password) {
         this.username = username;
         this.password = password;
     }
 
-    public User() {
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -30,11 +57,11 @@ private  String password;
         this.password = password;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                '}';
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
     }
 }
